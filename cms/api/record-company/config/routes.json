@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/record-companies",
+      "handler": "record-company.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/record-companies/count",
+      "handler": "record-company.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/record-companies/:id",
+      "handler": "record-company.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/record-companies",
+      "handler": "record-company.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/record-companies/:id",
+      "handler": "record-company.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/record-companies/:id",
+      "handler": "record-company.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

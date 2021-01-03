@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_users",
+  "info": {
+    "name": "Page_User",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Username": {
+      "type": "string"
+    },
+    "Password": {
+      "type": "password"
+    },
+    "records": {
+      "collection": "record",
+      "via": "page_users",
+      "dominant": true
+    }
+  }
+}

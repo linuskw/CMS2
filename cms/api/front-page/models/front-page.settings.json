@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "front_pages",
+  "info": {
+    "name": "Front_Page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Contact": {
+      "type": "text"
+    },
+    "artists": {
+      "collection": "artist"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "record_companies",
+  "info": {
+    "name": "Record_Company",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Information": {
+      "type": "text"
+    },
+    "artists": {
+      "collection": "artist"
+    }
+  }
+}

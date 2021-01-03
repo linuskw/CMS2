@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bandmembers",
+  "info": {
+    "name": "Band_Member",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Biography": {
+      "type": "text"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "band": {
+      "collection": "artist",
+      "via": "band_members"
+    }
+  }
+}

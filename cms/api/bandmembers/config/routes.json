@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/bandmembers",
+      "handler": "bandmembers.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bandmembers/count",
+      "handler": "bandmembers.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bandmembers/:id",
+      "handler": "bandmembers.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/bandmembers",
+      "handler": "bandmembers.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/bandmembers/:id",
+      "handler": "bandmembers.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/bandmembers/:id",
+      "handler": "bandmembers.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
