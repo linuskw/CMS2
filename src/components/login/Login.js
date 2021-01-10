@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-
 import axios from "axios";
 
 import "./Login.css";
@@ -11,7 +9,6 @@ const Login = ({ setPageState, setUser }) => {
   const [email, setEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
-  const dispatch = useDispatch();
 
   const onRegister = (e) => {
     e.preventDefault();

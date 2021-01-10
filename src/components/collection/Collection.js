@@ -29,8 +29,8 @@ const Collection = ({ user }) => {
     });
   }, []);
 
-  const axiosPut = (tempRecords) => {
-    axios
+  const axiosPut = async (tempRecords) => {
+    await axios
       .put(
         `http://localhost:1337/users/${localStorage.getItem("userid")}`,
         {
