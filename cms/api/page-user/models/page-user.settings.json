@@ -16,11 +16,6 @@
     },
     "Password": {
       "type": "password"
-    },
-    "records": {
-      "collection": "record",
-      "via": "page_users",
-      "dominant": true
     }
   }
 }

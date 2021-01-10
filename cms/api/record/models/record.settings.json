@@ -39,19 +39,17 @@
       "plugin": "upload",
       "required": false
     },
-    "artists": {
-      "via": "records",
-      "collection": "artist",
-      "dominant": true
+    "artist": {
+      "model": "artist",
+      "via": "records"
     },
     "users": {
-      "via": "records",
       "plugin": "users-permissions",
-      "collection": "user"
+      "collection": "user",
+      "via": "records"
     },
-    "page_users": {
-      "via": "records",
-      "collection": "page-user"
+    "Songlist": {
+      "type": "json"
     }
   }
 }

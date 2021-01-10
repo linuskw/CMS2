@@ -1,0 +1,11 @@
+.loginRegisterDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.loginDiv,
+.registerDiv {
+  display: flex;
+  flex-direction: column;
+}

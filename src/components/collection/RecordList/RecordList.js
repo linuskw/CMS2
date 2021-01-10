@@ -2,13 +2,20 @@ import React from "react";
 
 import Record from "./Record";
 
-const RecordList = ({ list }) => {
-  console.log(list);
+const RecordList = ({ userRecords, records, deleteRecord, updateRecord }) => {
   return (
     <div>
-      {list &&
-        list.map((v, i) => {
-          return <Record value={v} key={i} />;
+      {userRecords &&
+        userRecords.map((v, i) => {
+          return (
+            <Record
+              value={v}
+              records={records}
+              deleteRecord={deleteRecord}
+              updateRecord={updateRecord}
+              key={i}
+            />
+          );
         })}
     </div>
   );

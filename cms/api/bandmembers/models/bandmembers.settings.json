@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "bandmembers",
   "info": {
-    "name": "Band_Member",
+    "name": "Member",
     "description": ""
   },
   "options": {

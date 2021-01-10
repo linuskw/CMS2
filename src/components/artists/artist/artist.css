@@ -1,0 +1,41 @@
+.artistDiv {
+  height: 400px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px 0 10px 0;
+  padding: 0 20px 0 20px;
+}
+
+.artistDivInner {
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.artistBiography {
+  width: 30%;
+}
+
+.artistImage {
+  max-width: 300px;
+}
+
+.recordlistartist {
+  height: 80%;
+  width: 30%;
+  overflow-y: auto;
+}
+
+.artistRecordDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+
+.artistRecordImage {
+  max-width: 50px;
+  margin: 10px;
+}

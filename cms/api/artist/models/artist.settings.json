@@ -34,8 +34,8 @@
       "dominant": true
     },
     "records": {
-      "collection": "record",
-      "via": "artists"
+      "via": "artist",
+      "collection": "record"
     }
   }
 }
