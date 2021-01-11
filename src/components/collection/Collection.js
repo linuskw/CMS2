@@ -7,8 +7,8 @@ import Record from "./RecordList/Record";
 import "./collection.css";
 
 const Collection = ({ user }) => {
-  const [userState, setUserState] = useState(user);
-  const [userRecords, setUserRecords] = useState(userState.records);
+  const [userState, setUserState] = useState();
+  const [userRecords, setUserRecords] = useState();
   const [records, setRecords] = useState([]);
   const [selectedRecord, setSelectedRecord] = useState({});
 
@@ -29,8 +29,12 @@ const Collection = ({ user }) => {
     });
   }, []);
 
-  const axiosPut = async (tempRecords) => {
-    await axios
+  useEffect(() => {
+    console.log(userRecords);
+  }, [userRecords]);
+
+  const axiosPut = (tempRecords) => {
+    axios
       .put(
         `http://localhost:1337/users/${localStorage.getItem("userid")}`,
         {
@@ -44,7 +48,21 @@ const Collection = ({ user }) => {
         }
       )
       .then((res) => {
+        console.log(res);
         setUserRecords(res.data.records);
+        // axios
+        //   .get(
+        //     `http://localhost:1337/users/${localStorage.getItem("userid")}`,
+        //     {
+        //       headers: {
+        //         Authorization: `Bearer ${localStorage.getItem("userJWT")}`,
+        //       },
+        //     }
+        //   )
+        //   .then((res) => {
+        //     setUserState(res.data);
+        //     setUserRecords(res.data.records);
+        //   });
       });
   };
 
@@ -55,14 +73,6 @@ const Collection = ({ user }) => {
   };
 
   const updateRecord = (updatedRecord) => {
-    const tempRecords = userRecords.map((v) => {
-      if (v.id === updatedRecord.id) {
-        return updatedRecord;
-      } else {
-        return v;
-      }
-    });
-
     axios
       .put(
         `http://localhost:1337/records/${updatedRecord.id}`,
@@ -81,8 +91,13 @@ const Collection = ({ user }) => {
       });
   };
 
-  const deleteRecord = (id) => {
+  const deleteRecord = (name, id) => {
+    console.log(name);
+    console.log(id);
     const tempRecords = userRecords.filter((v) => v.id !== id);
+    console.log("tempRecords: ", tempRecords);
+
+    setUserRecords((prev) => prev.filter((v) => v.id !== id));
 
     axiosPut(tempRecords);
   };
@@ -105,18 +120,17 @@ const Collection = ({ user }) => {
         </select>
         <input type="submit" />
       </form>
-      {userRecords &&
-        userRecords.map((v, i) => {
-          return (
-            <Record
-              value={v}
-              records={records}
-              deleteRecord={deleteRecord}
-              updateRecord={updateRecord}
-              key={i}
-            />
-          );
-        })}
+      {userRecords?.map((v, i) => {
+        return (
+          <Record
+            value={v}
+            records={records}
+            deleteRecord={deleteRecord}
+            updateRecord={updateRecord}
+            key={i}
+          />
+        );
+      })}
     </div>
   );
 };

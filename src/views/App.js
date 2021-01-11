@@ -32,8 +32,12 @@ function App() {
       {pageState && localStorage.getItem("userJWT") ? (
         <>
           <Router>
-            <Link to="/artists">Artists</Link>
-            <Link to="/">Collection</Link>
+            <Link to="/artists" style={{ marginLeft: "10px" }}>
+              Artists
+            </Link>
+            <Link to="/" style={{ marginLeft: "10px" }}>
+              Collection
+            </Link>
             <Route exact path="/">
               <Collection user={user} />
             </Route>

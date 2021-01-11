@@ -26,7 +26,9 @@ const Record = ({ value, records, deleteRecord, updateRecord }) => {
         </h2>
         <div>
           <button onClick={editRecord}>{editState ? "Save" : "Edit"}</button>
-          <button onClick={() => deleteRecord(record.id)}>Delete</button>
+          <button onClick={() => deleteRecord(record.Name, record.id)}>
+            Delete
+          </button>
         </div>
       </div>
 
